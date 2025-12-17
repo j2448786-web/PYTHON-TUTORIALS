@@ -1,0 +1,32 @@
+Part 1: Pseudocode
+
+BEGIN Savings Goal Tracker
+    CREATE dictionary savings_goals
+    
+    FUNCTION create_savings_goal()
+        GET user_id from input
+        GET target_amount from input  
+        GET target_date from input
+        CREATE goal object with:
+            - target_amount
+            - target_date  
+            - amount_saved = 0
+            - status = "Active"
+        STORE goal in savings_goals[user_id]
+        PRINT confirmation
+    
+    FUNCTION update_savings_progress()
+        GET user_id from input
+        IF user_id not in savings_goals
+            PRINT error and RETURN
+        GET additional_amount from input
+        ADD to goal['amount_saved']
+        IF amount_saved >= target_amount
+            SET status to "Completed"
+            PRINT congratulations
+        ELSE
+            PRINT updated amount
+    
+    ... [other functions in pseudocode] ...
+
+END
